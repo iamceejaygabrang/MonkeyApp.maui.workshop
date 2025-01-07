@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MonkeyApp.maui.nav.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:model="clr-namespace:MonkeyApp.maui.nav.Models"
+    xmlns:viewmodel="clr-namespace:MonkeyApp.maui.nav.ViewModels"
+    x:DataType="viewmodel:MonkeysViewModel"
+    Shell.BackgroundColor="#038aff"
+    Shell.NavBarIsVisible="True"
+    Shell.TitleColor="White">
+    <Grid
+        ColumnDefinitions="*,*"
+        RowDefinitions="*, auto">
+        <CollectionView
+            Grid.Row="0"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            HorizontalOptions="Center"
+            ItemsSource="{Binding Monkeys}"
+            VerticalOptions="Center">
+            <CollectionView.EmptyView>
+                <Image
+                    HeightRequest="200"
+                    Source="nodata.png"
+                    WidthRequest="200" />
+            </CollectionView.EmptyView>
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="model:Monkey">
+                    <Grid Padding="10">
+                        <Border HeightRequest="125">
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MonkeysViewModel}}, x:DataType=viewmodel:MonkeysViewModel, Path=NavigateToDetailsPageCommand}" CommandParameter="{Binding .}" />
+                            </Border.GestureRecognizers>
+                            <Grid Padding="0" ColumnDefinitions="125,*">
+                                <Image
+                                    Aspect="AspectFill"
+                                    HeightRequest="125"
+                                    Source="{Binding Image}"
+                                    WidthRequest="125" />
+                                <VerticalStackLayout
+                                    Grid.Column="1"
+                                    Padding="10"
+                                    VerticalOptions="Center">
+                                    <Label Text="{Binding Name}" />
+                                    <Label Text="{Binding Location}" />
+                                </VerticalStackLayout>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Button
+            Grid.Row="1"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Margin="10,0,10,10"
+            BackgroundColor="#038aff"
+            Command="{Binding GetMonkeyCommand}"
+            FontSize="16"
+            Text="Get Monkeys"
+            TextColor="White" />
+
+        <ActivityIndicator
+            Grid.RowSpan="2"
+            Grid.ColumnSpan="2"
+            HorizontalOptions="Fill"
+            IsRunning="{Binding IsBusy}"
+            IsVisible="{Binding IsBusy}"
+            VerticalOptions="Center"
+            Color="#038aff" />
+    </Grid>
+</ContentPage>

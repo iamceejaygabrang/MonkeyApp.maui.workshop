@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MonkeyApp.maui.theme.Views.DetailsPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:model="clr-namespace:MonkeyApp.maui.theme.Models"
+    xmlns:viewmodel="clr-namespace:MonkeyApp.maui.theme.ViewModels"
+    Title="Detail Page"
+    x:DataType="viewmodel:DetailsViewModel"
+    Shell.BackgroundColor="#038aff"
+    Shell.NavBarIsVisible="True"
+    Shell.TitleColor="White">
+    <ScrollView>
+        <Grid RowDefinitions="Auto,Auto,*">
+            <BoxView
+                Grid.RowSpan="2"
+                BackgroundColor="#038aff"
+                HorizontalOptions="Fill"
+                VerticalOptions="Fill" />
+
+            <Border
+                Margin="0,8,0,0"
+                HeightRequest="172"
+                HorizontalOptions="Center"
+                Stroke="White"
+                StrokeShape="RoundRectangle 80"
+                StrokeThickness="6"
+                VerticalOptions="Center"
+                WidthRequest="172">
+                <Image
+                    Aspect="AspectFill"
+                    HeightRequest="160"
+                    HorizontalOptions="Center"
+                    Source="{Binding Monkey.Image}"
+                    VerticalOptions="Center"
+                    WidthRequest="160" />
+            </Border>
+
+            <VerticalStackLayout
+                Grid.Row="2"
+                Padding="10"
+                Spacing="10">
+                <Label FontSize="20" Text="{Binding Monkey.Name}" />
+                <Label FontSize="14" Text="{Binding Monkey.Details}" />
+                <Label FontSize="14" Text="{Binding Monkey.Location, StringFormat='Location: {0}'}" />
+                <Label FontSize="14" Text="{Binding Monkey.Population, StringFormat='Population: {0}'}" />
+            </VerticalStackLayout>
+
+        </Grid>
+    </ScrollView>
+</ContentPage>

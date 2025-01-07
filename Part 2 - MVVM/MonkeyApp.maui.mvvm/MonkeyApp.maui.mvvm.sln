@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35431.28
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonkeyApp.maui.mvvm", "MonkeyApp.maui.mvvm.csproj", "{ABF94B85-A118-4D67-A5A8-2DFABA3DFA27}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ABF94B85-A118-4D67-A5A8-2DFABA3DFA27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABF94B85-A118-4D67-A5A8-2DFABA3DFA27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABF94B85-A118-4D67-A5A8-2DFABA3DFA27}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{ABF94B85-A118-4D67-A5A8-2DFABA3DFA27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABF94B85-A118-4D67-A5A8-2DFABA3DFA27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABF94B85-A118-4D67-A5A8-2DFABA3DFA27}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {03AC0CAA-B44C-446E-B23F-17C7963AD50D}
+	EndGlobalSection
+EndGlobal
