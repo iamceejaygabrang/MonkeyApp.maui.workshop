@@ -20,7 +20,7 @@ namespace MonkeyApp.maui.api.ViewModels
         }
 
         [RelayCommand]
-        async Task GetMonkeyAsync()
+        async Task GetMonkey()
         {
             try
             {

@@ -15,7 +15,7 @@
             Grid.Row="0"
             Grid.Column="0"
             Grid.ColumnSpan="2"
-            HorizontalOptions="Center"
+            HorizontalOptions="FillAndExpand"
             VerticalOptions="Center">
             <CollectionView.EmptyView>
                 <Image
@@ -27,7 +27,6 @@
                 <DataTemplate x:DataType="model:Monkey">
                     <Grid Padding="10">
                         <Border HeightRequest="125">
-
                             <Grid Padding="0" ColumnDefinitions="125,*">
                                 <Image
                                     Aspect="AspectFill"
@@ -61,8 +60,6 @@
             Grid.RowSpan="2"
             Grid.ColumnSpan="2"
             HorizontalOptions="Fill"
-            IsRunning="{Binding IsBusy}"
-            IsVisible="{Binding IsBusy}"
             VerticalOptions="Center"
             Color="#038aff" />
     </Grid>

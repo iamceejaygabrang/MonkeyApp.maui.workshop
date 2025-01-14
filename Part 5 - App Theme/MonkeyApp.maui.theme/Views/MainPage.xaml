@@ -20,7 +20,7 @@
             Grid.Row="0"
             Grid.Column="0"
             Grid.ColumnSpan="2"
-            HorizontalOptions="Center"
+            HorizontalOptions="FillAndExpand"
             ItemsSource="{Binding Monkeys}"
             VerticalOptions="Center">
             <CollectionView.EmptyView>

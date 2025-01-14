@@ -15,7 +15,7 @@
             Grid.Row="0"
             Grid.Column="0"
             Grid.ColumnSpan="2"
-            HorizontalOptions="Center"
+            HorizontalOptions="FillAndExpand"
             ItemsSource="{Binding Monkeys}"
             VerticalOptions="Center">
             <CollectionView.EmptyView>
@@ -27,7 +27,7 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="model:Monkey">
                     <Grid Padding="10">
-                        <Border BackgroundColor="{AppThemeBinding Dark=Black, Light=Transparent, Default=Transparent}" HeightRequest="125">
+                        <Border HeightRequest="125">
                             <Grid Padding="0" ColumnDefinitions="125,*">
                                 <Image
                                     Aspect="AspectFill"
@@ -38,8 +38,8 @@
                                     Grid.Column="1"
                                     Padding="10"
                                     VerticalOptions="Center">
-                                    <Label Style="{StaticResource LargeLabel}" Text="{Binding Name}" />
-                                    <Label Style="{StaticResource MediumLabel}" Text="{Binding Location}" />
+                                    <Label Text="{Binding Name}" />
+                                    <Label Text="{Binding Location}" />
                                 </VerticalStackLayout>
                             </Grid>
                         </Border>
@@ -54,8 +54,8 @@
             Grid.ColumnSpan="2"
             Margin="10,0,10,10"
             BackgroundColor="#038aff"
-            FontSize="16"
             Command="{Binding GetMonkeyCommand}"
+            FontSize="16"
             Text="Get Monkeys"
             TextColor="White" />
 

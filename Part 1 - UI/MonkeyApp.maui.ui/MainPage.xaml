@@ -12,7 +12,7 @@
             Grid.Row="0"
             Grid.Column="0"
             Grid.ColumnSpan="2"
-            HorizontalOptions="Center"
+            HorizontalOptions="FillAndExpand"
             VerticalOptions="Center">
             <CollectionView.EmptyView>
                 <Image
